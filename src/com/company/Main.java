@@ -21,15 +21,18 @@ public class Main {
         /*StudentServiceImbl s = new StudentServiceImbl();
         for(Student student : s.getStudents()){
             System.out.println(student.getDate());
-        }*/
+        }
         StudentController studentControl = new StudentController();
         List<Student> students = studentControl.getStudents();
-
-        for (int i =0;i<students.size();i++){
+*/
+        StudentController studentController = new StudentController();
+        Thread thread = new Thread(studentController);
+        thread.start();
+        /*for (int i =0;i<students.size();i++){
             StudentController studentController = new StudentController(students.get(i));
             Thread thread = new Thread(studentController);
             thread.run();
-        }
+        }*/
 
     }
 }

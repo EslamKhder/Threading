@@ -8,29 +8,27 @@ import java.util.List;
 
 public class StudentController implements Runnable {
     private StudentServiceImbl studentServiceImbl = new StudentServiceImbl();
-    private Student student = new Student();
 
     public StudentController() {
-    }
-
-    public StudentController(Student student) {
-        this.student = student;
     }
 
     public List<Student> getStudents() {
         return this.studentServiceImbl.getStudents();
     }
-    public Student editStudents() {
+    public Student editStudents(Student student) {
         return this.studentServiceImbl.editStudents(student);
     }
 
     @Override
     public synchronized void run() {
-        try {
-            Thread.sleep(60000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        List<Student> students = this.getStudents();
+        for (int x = 0;x<students.size();x++) {
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            this.editStudents(students.get(x));
         }
-            this.editStudents();
     }
 }
