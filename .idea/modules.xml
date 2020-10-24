@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Threading.iml" filepath="$PROJECT_DIR$/Threading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread-file/thread-file.iml" filepath="$PROJECT_DIR$/thread-file/thread-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread-files/thread-files.iml" filepath="$PROJECT_DIR$/thread-files/thread-files.iml" />
     </modules>
   </component>
 </project>
